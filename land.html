@@ -1,0 +1,88 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  background-color: #838383;
+  color: #fefefe;
+  padding: 16px;
+  /* ...if you really want it to be 100% of the screen un-comment below */
+/*   height: 100%; 
+  width: 100%; */
+}
+/* 3D Button */
+.btn-3d {
+    position: relative;
+    display: inline-block;
+    font-size: 22px;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px 60px;
+    color: white;
+    margin: 20px 10px 10px;
+    border-radius: 6px;
+    text-align: center;
+    transition: top .01s linear;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.btn-3d.red:hover    {background-color: #e74c3c;}
+
+.btn-3d:active {
+    top: 9px;
+    text-decoration: none;
+}
+
+/* 3D button colors */
+.btn-3d.red {
+    background-color: #e74c3c;
+    box-shadow: 0 0 0 1px #c63702 inset,
+        0 0 0 2px rgba(255,255,255,0.15) inset,
+        0 8px 0 0 #C24032,
+        0 8px 0 1px rgba(0,0,0,0.4),
+                0 8px 8px 1px rgba(0,0,0,0.5);
+}
+.btn-3d.red:active {
+    box-shadow: 0 0 0 1px #c63702 inset,
+                0 0 0 2px rgba(255,255,255,0.15) inset,
+                0 0 0 1px rgba(0,0,0,0.4);
+}
+
+
+</style>
+<script>
+function clickToLink(){
+    const isWebView = navigator.userAgent.includes('wv');
+    console.log(isWebView, '<--');
+
+
+    var prot = 'https://';
+    var first = 'instagram';
+    var second = '.';
+    var third = 'com';
+    var alias ='/p/CZtMCYePXsi';
+    
+    //window.open(prot+first+second+third+alias,'_blank');
+    if(isWebView){
+
+        window.location = "intent://"+prot+first+second+third+alias+"?wvred=1#Intent;scheme=https;action=android.intent.action.VIEW;end;";
+    }
+    window.location = prot+first+second+third+alias;
+}
+</script>
+</head>
+<body>
+<div onclick="clickToLink();"><span onclick="clickToLink();" class="btn-3d red">CLICK HERE</span></div>
+</body>
+</html>
